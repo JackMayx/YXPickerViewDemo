@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579328B321E28C5CA9AE3296 /* Pods_YXPickerViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F91FAE82FE1704811CDEF /* Pods_YXPickerViewDemo.framework */; };
 		BD13000A23CC3C6E00FE2BFB /* YXPickerViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13000923CC3C6E00FE2BFB /* YXPickerViewDemoTests.swift */; };
 		BD13001523CC3C6E00FE2BFB /* YXPickerViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13001423CC3C6E00FE2BFB /* YXPickerViewDemoUITests.swift */; };
+		BD13002A23CC3CC200FE2BFB /* YXCityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13002323CC3CC100FE2BFB /* YXCityModel.swift */; };
+		BD13002B23CC3CC200FE2BFB /* YXPickerTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13002423CC3CC100FE2BFB /* YXPickerTitleCell.swift */; };
+		BD13002C23CC3CC200FE2BFB /* YXPickerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13002523CC3CC100FE2BFB /* YXPickerListView.swift */; };
+		BD13002D23CC3CC200FE2BFB /* Files.json in Resources */ = {isa = PBXBuildFile; fileRef = BD13002623CC3CC100FE2BFB /* Files.json */; };
+		BD13002E23CC3CC200FE2BFB /* YXChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13002723CC3CC200FE2BFB /* YXChooseView.swift */; };
+		BD13002F23CC3CC200FE2BFB /* YXPickerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13002823CC3CC200FE2BFB /* YXPickerListCell.swift */; };
+		BD13003023CC3CC200FE2BFB /* YXPickerTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13002923CC3CC200FE2BFB /* YXPickerTitleView.swift */; };
+		BD13003223CC3CFB00FE2BFB /* UIView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13003123CC3CFB00FE2BFB /* UIView-Extension.swift */; };
+		BD13003423CC3D7700FE2BFB /* YXCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13003323CC3D7700FE2BFB /* YXCompatible.swift */; };
 		BD13FFF323CC3C6B00FE2BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13FFF223CC3C6B00FE2BFB /* AppDelegate.swift */; };
 		BD13FFF523CC3C6B00FE2BFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13FFF423CC3C6B00FE2BFB /* SceneDelegate.swift */; };
 		BD13FFF723CC3C6B00FE2BFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13FFF623CC3C6B00FE2BFB /* ViewController.swift */; };
@@ -35,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C630E4B864C898453477B6E /* Pods-YXPickerViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXPickerViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-YXPickerViewDemo/Pods-YXPickerViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		944F91FAE82FE1704811CDEF /* Pods_YXPickerViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YXPickerViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD13000023CC3C6E00FE2BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD13000523CC3C6E00FE2BFB /* YXPickerViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YXPickerViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD13000923CC3C6E00FE2BFB /* YXPickerViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXPickerViewDemoTests.swift; sourceTree = "<group>"; };
@@ -42,6 +54,15 @@
 		BD13001023CC3C6E00FE2BFB /* YXPickerViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YXPickerViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD13001423CC3C6E00FE2BFB /* YXPickerViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXPickerViewDemoUITests.swift; sourceTree = "<group>"; };
 		BD13001623CC3C6E00FE2BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD13002323CC3CC100FE2BFB /* YXCityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXCityModel.swift; sourceTree = "<group>"; };
+		BD13002423CC3CC100FE2BFB /* YXPickerTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXPickerTitleCell.swift; sourceTree = "<group>"; };
+		BD13002523CC3CC100FE2BFB /* YXPickerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXPickerListView.swift; sourceTree = "<group>"; };
+		BD13002623CC3CC100FE2BFB /* Files.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Files.json; sourceTree = "<group>"; };
+		BD13002723CC3CC200FE2BFB /* YXChooseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXChooseView.swift; sourceTree = "<group>"; };
+		BD13002823CC3CC200FE2BFB /* YXPickerListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXPickerListCell.swift; sourceTree = "<group>"; };
+		BD13002923CC3CC200FE2BFB /* YXPickerTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXPickerTitleView.swift; sourceTree = "<group>"; };
+		BD13003123CC3CFB00FE2BFB /* UIView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView-Extension.swift"; sourceTree = "<group>"; };
+		BD13003323CC3D7700FE2BFB /* YXCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXCompatible.swift; sourceTree = "<group>"; };
 		BD13FFEF23CC3C6B00FE2BFB /* YXPickerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXPickerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD13FFF223CC3C6B00FE2BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD13FFF423CC3C6B00FE2BFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +70,7 @@
 		BD13FFF923CC3C6B00FE2BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD13FFFB23CC3C6E00FE2BFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD13FFFE23CC3C6E00FE2BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E097DE73401B55C90FA5FEE9 /* Pods-YXPickerViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXPickerViewDemo.release.xcconfig"; path = "Target Support Files/Pods-YXPickerViewDemo/Pods-YXPickerViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,12 +92,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				579328B321E28C5CA9AE3296 /* Pods_YXPickerViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B8BDF5E2E7AB671B8001AE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C630E4B864C898453477B6E /* Pods-YXPickerViewDemo.debug.xcconfig */,
+				E097DE73401B55C90FA5FEE9 /* Pods-YXPickerViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7AA15271739FB12BD5DDEB75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				944F91FAE82FE1704811CDEF /* Pods_YXPickerViewDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD13000823CC3C6E00FE2BFB /* YXPickerViewDemoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +135,22 @@
 			path = YXPickerViewDemoUITests;
 			sourceTree = "<group>";
 		};
+		BD13002223CC3C7700FE2BFB /* YXPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				BD13003323CC3D7700FE2BFB /* YXCompatible.swift */,
+				BD13003123CC3CFB00FE2BFB /* UIView-Extension.swift */,
+				BD13002623CC3CC100FE2BFB /* Files.json */,
+				BD13002723CC3CC200FE2BFB /* YXChooseView.swift */,
+				BD13002323CC3CC100FE2BFB /* YXCityModel.swift */,
+				BD13002823CC3CC200FE2BFB /* YXPickerListCell.swift */,
+				BD13002523CC3CC100FE2BFB /* YXPickerListView.swift */,
+				BD13002423CC3CC100FE2BFB /* YXPickerTitleCell.swift */,
+				BD13002923CC3CC200FE2BFB /* YXPickerTitleView.swift */,
+			);
+			path = YXPickerView;
+			sourceTree = "<group>";
+		};
 		BD13FFE623CC3C6B00FE2BFB = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +158,8 @@
 				BD13000823CC3C6E00FE2BFB /* YXPickerViewDemoTests */,
 				BD13001323CC3C6E00FE2BFB /* YXPickerViewDemoUITests */,
 				BD13FFF023CC3C6B00FE2BFB /* Products */,
+				5B8BDF5E2E7AB671B8001AE1 /* Pods */,
+				7AA15271739FB12BD5DDEB75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +176,7 @@
 		BD13FFF123CC3C6B00FE2BFB /* YXPickerViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BD13002223CC3C7700FE2BFB /* YXPickerView */,
 				BD13FFF223CC3C6B00FE2BFB /* AppDelegate.swift */,
 				BD13FFF423CC3C6B00FE2BFB /* SceneDelegate.swift */,
 				BD13FFF623CC3C6B00FE2BFB /* ViewController.swift */,
@@ -171,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD13001923CC3C6E00FE2BFB /* Build configuration list for PBXNativeTarget "YXPickerViewDemo" */;
 			buildPhases = (
+				2C3189246580B67F5EF42D98 /* [CP] Check Pods Manifest.lock */,
 				BD13FFEB23CC3C6B00FE2BFB /* Sources */,
 				BD13FFEC23CC3C6B00FE2BFB /* Frameworks */,
 				BD13FFED23CC3C6B00FE2BFB /* Resources */,
+				DF7C6132A059C079A0487469 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,12 +309,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD13FFFF23CC3C6E00FE2BFB /* LaunchScreen.storyboard in Resources */,
+				BD13002D23CC3CC200FE2BFB /* Files.json in Resources */,
 				BD13FFFC23CC3C6E00FE2BFB /* Assets.xcassets in Resources */,
 				BD13FFFA23CC3C6B00FE2BFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C3189246580B67F5EF42D98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YXPickerViewDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF7C6132A059C079A0487469 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YXPickerViewDemo/Pods-YXPickerViewDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YXPickerViewDemo/Pods-YXPickerViewDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YXPickerViewDemo/Pods-YXPickerViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD13000123CC3C6E00FE2BFB /* Sources */ = {
@@ -277,7 +382,15 @@
 			files = (
 				BD13FFF723CC3C6B00FE2BFB /* ViewController.swift in Sources */,
 				BD13FFF323CC3C6B00FE2BFB /* AppDelegate.swift in Sources */,
+				BD13003423CC3D7700FE2BFB /* YXCompatible.swift in Sources */,
 				BD13FFF523CC3C6B00FE2BFB /* SceneDelegate.swift in Sources */,
+				BD13002E23CC3CC200FE2BFB /* YXChooseView.swift in Sources */,
+				BD13002F23CC3CC200FE2BFB /* YXPickerListCell.swift in Sources */,
+				BD13002C23CC3CC200FE2BFB /* YXPickerListView.swift in Sources */,
+				BD13003023CC3CC200FE2BFB /* YXPickerTitleView.swift in Sources */,
+				BD13002B23CC3CC200FE2BFB /* YXPickerTitleCell.swift in Sources */,
+				BD13003223CC3CFB00FE2BFB /* UIView-Extension.swift in Sources */,
+				BD13002A23CC3CC200FE2BFB /* YXCityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +545,7 @@
 		};
 		BD13001A23CC3C6E00FE2BFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C630E4B864C898453477B6E /* Pods-YXPickerViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +564,7 @@
 		};
 		BD13001B23CC3C6E00FE2BFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E097DE73401B55C90FA5FEE9 /* Pods-YXPickerViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
