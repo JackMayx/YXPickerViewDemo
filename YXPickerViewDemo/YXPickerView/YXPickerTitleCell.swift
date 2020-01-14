@@ -30,10 +30,6 @@ class YXPickerTitleCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         titleLabel.frame = CGRect(x: 0, y: 0, width: yx.width, height: yx.height)
-        
-        
-        
-        
     }
     
 }

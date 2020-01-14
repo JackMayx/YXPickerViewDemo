@@ -10,7 +10,7 @@ import UIKit
 
 class YXPickerListCell: UITableViewCell {
 
-    public var chooseImage: UIImageView!
+    public var chooseImageView: UIImageView!
     public var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class YXPickerListCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.addSubViewsMethod()
+        addSubViewsMethod()
 
 
     }
@@ -42,9 +42,9 @@ class YXPickerListCell: UITableViewCell {
     
     private func addSubViewsMethod(){
         
-        chooseImage = UIImageView(frame: CGRect(x: -15, y: 12.5, width: 15, height: 15))
-        chooseImage.image = UIImage(named: "chooseCity")
-        addSubview(chooseImage)
+        chooseImageView = UIImageView(frame: CGRect(x: -15, y: 12.5, width: 15, height: 15))
+        chooseImageView.image = UIImage(named: "chooseCity")
+        addSubview(chooseImageView)
         
         titleLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
         titleLabel.textColor = UIColor.gray

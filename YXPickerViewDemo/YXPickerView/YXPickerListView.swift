@@ -17,14 +17,16 @@ protocol YXPickerListViewDelegate {
 
 class YXPickerListView: UIView {
         
-    public var cityDataArray: [YXModel]?
-
+    public var cityDataArray: [YXModel]? {
+        didSet{
+            myTableView.reloadData()
+        }
+    }
     public var delegate: YXPickerListViewDelegate?
     
     private var selectIndexs: IndexPath?
     
-    
-    lazy var myTableView: UITableView = {
+    private lazy var myTableView: UITableView = {
         let tab = UITableView(frame: self.bounds)
         tab.delegate = self
         tab.dataSource = self
@@ -40,21 +42,13 @@ class YXPickerListView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setSubviews()
+        addSubview(myTableView)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func setSubviews(){
-        addSubview(myTableView)
-    }
-    
-    public func setDataToListView(cityDataArray: [YXModel]?){
-        
-        self.cityDataArray = cityDataArray        
-        myTableView.reloadData()
-    }
+
 
 }
 
@@ -69,10 +63,10 @@ extension YXPickerListView: UITableViewDelegate, UITableViewDataSource{
         cells.model = cityDataArray?[indexPath.row].name ?? ""
         
         if selectIndexs == indexPath{
-            cells.chooseImage.frame = CGRect(x: 15, y: 12.5, width: 15, height: 15)
+            cells.chooseImageView.frame = CGRect(x: 15, y: 12.5, width: 15, height: 15)
             cells.titleLabel.frame = CGRect(x: 35, y: 10, width: 200, height: 20)
         }else{
-            cells.chooseImage.frame = CGRect(x: -15, y: 12.5, width: 15, height: 15)
+            cells.chooseImageView.frame = CGRect(x: -15, y: 12.5, width: 15, height: 15)
             cells.titleLabel.frame = CGRect(x: 20, y: 10, width: 200, height: 20)
         }
         cells.selectionStyle = .none
@@ -87,20 +81,20 @@ extension YXPickerListView: UITableViewDelegate, UITableViewDataSource{
             selectIndexs = indexPath
             let cell = tableView.cellForRow(at: indexPath) as! YXPickerListCell
             UIView.animate(withDuration: 0.3) {
-                cell.chooseImage.frame = CGRect(x: 15, y: 12.5, width: 15, height: 15)
+                cell.chooseImageView.frame = CGRect(x: 15, y: 12.5, width: 15, height: 15)
                 cell.titleLabel.frame = CGRect(x: 35, y: 10, width: 200, height: 20)
             }
         }else{
             
             ///取消选中
             let celled = tableView.cellForRow(at: selectIndexs!) as? YXPickerListCell
-            celled?.chooseImage.frame = CGRect(x: -15, y: 12.5, width: 15, height: 15)
+            celled?.chooseImageView.frame = CGRect(x: -15, y: 12.5, width: 15, height: 15)
             celled?.titleLabel.frame = CGRect(x: 20, y: 10, width: 200, height: 20)
             selectIndexs = indexPath
             ///选中
             let cell = tableView.cellForRow(at: indexPath) as! YXPickerListCell
             UIView.animate(withDuration: 0.3) {
-                cell.chooseImage.frame = CGRect(x: 15, y: 12.5, width: 15, height: 15)
+                cell.chooseImageView.frame = CGRect(x: 15, y: 12.5, width: 15, height: 15)
                 cell.titleLabel.frame = CGRect(x: 35, y: 10, width: 200, height: 20)
             }
         }

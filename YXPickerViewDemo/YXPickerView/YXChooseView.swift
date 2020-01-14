@@ -55,14 +55,14 @@ class YXChooseView: UIView {
             self.frame = CGRect(x: 0, y: frame.origin.y - frame.size.height, width: frame.size.width, height: frame.size.height)
         })
         
-        titleView = YXPickerTitleView(frame: CGRect(x: 0, y: 40, width: self.yx.width, height: 40))
-        titleView.setDataTitle(titleArray: titleArray)
-        self.addSubview(titleView)
+        titleView = YXPickerTitleView(frame: CGRect(x: 0, y: 40, width: yx.width, height: 40))
+        titleView.titleArray = titleArray
+        addSubview(titleView)
         titleView.delegate = self
         
         yx.getWindow?.addSubview(self)
         ///移除所有view
-        bgView.addTapAction(action: {
+        bgView.addTapAction(action: { [unowned self] in 
             self.disMiss()
         })
         
@@ -80,15 +80,15 @@ class YXChooseView: UIView {
     }
     func setSubviews(){
         
-        cityLiview = YXPickerListView(frame: CGRect(x: self.yx.width * CGFloat(chooseDataArray.count) , y: 0, width: self.yx.width, height: myScrollerView.yx.height))
+        cityLiview = YXPickerListView(frame: CGRect(x: yx.width * CGFloat(chooseDataArray.count) , y: 0, width: yx.width, height: myScrollerView.yx.height))
         myScrollerView.addSubview(cityLiview)
         cityLiview.delegate = self
         cityLiview.tag = chooseDataArray.count
                 
-        myScrollerView.contentSize = CGSize(width: self.yx.width * CGFloat(chooseDataArray.count + 1), height: 0)
-        myScrollerView .setContentOffset(CGPoint(x: self.yx.width * CGFloat(chooseDataArray.count), y: 0), animated: true)
+        myScrollerView.contentSize = CGSize(width: yx.width * CGFloat(chooseDataArray.count + 1), height: 0)
+        myScrollerView .setContentOffset(CGPoint(x: yx.width * CGFloat(chooseDataArray.count), y: 0), animated: true)
         
-        cityLiview.setDataToListView(cityDataArray: modelList)
+        cityLiview.cityDataArray = modelList
         
     }
 
@@ -117,7 +117,7 @@ extension YXChooseView: UIScrollViewDelegate{
     ///滚动
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = scrollView.contentOffset.x / yx.width
-        self.titleView.scrollerTitle(index: Int(index))
+        titleView.scrollerTitle(index: Int(index))
     }
 }
 
@@ -129,20 +129,20 @@ extension YXChooseView: YXPickerListViewDelegate{
             titleArray.removeLast()
             titleArray.append(didselectModel.name ?? "")
             chooseCityName!(titleArray)
-            self.disMiss()
+            disMiss()
             return
         }
         
-        self.titleArray.removeAll()
+        titleArray.removeAll()
         chooseDataArray = chooseDataArray[0..<pickListView.tag]
         chooseDataArray.append(didselectModel.name ?? "")
         chooseDataArray.forEach { (item) in
-            self.titleArray.append(item)
+            titleArray.append(item)
         }
-        self.titleArray.append("请选择")
+        titleArray.append("请选择")
         modelList = didselectModel.child
-        self.setSubviews()
-        titleView.setDataTitle(titleArray: self.titleArray)
+        setSubviews()
+        titleView.titleArray = titleArray
         
     }
 

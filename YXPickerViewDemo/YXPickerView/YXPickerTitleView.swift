@@ -16,9 +16,13 @@ class YXPickerTitleView: UIView {
     
     public var delegate: YXPickerTitleViewDelegate?
     
-    var myCollectionView: UICollectionView!
+    public var titleArray:[String]? {
+        didSet{
+            myCollectionView.reloadData()
+        }
+    }
     
-    public var titleArray:[String]?
+    private var myCollectionView: UICollectionView!
     
     ///红色的动画线条
     private var animationline: UIView!
@@ -32,7 +36,7 @@ class YXPickerTitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setSubviews(){
+    private func setSubviews(){
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal        
@@ -47,7 +51,7 @@ class YXPickerTitleView: UIView {
         myCollectionView.register(YXPickerTitleCell.self, forCellWithReuseIdentifier: "cell")
         addSubview(myCollectionView)
         
-        let line = UIView(frame: CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1))
+        let line = UIView(frame: CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 1))
         addSubview(line)
         animationline = UIView()
         animationline.layer.cornerRadius = 1.5
@@ -57,17 +61,10 @@ class YXPickerTitleView: UIView {
         
     }
     
-    func setDataTitle(titleArray: [String]){
-        self.titleArray = titleArray
-        myCollectionView.reloadData()
-        
-    }
-    
   
-    func scrollerTitle(index: Int){
-        
+    public func scrollerTitle(index: Int){
         let indexPath = IndexPath(row: index, section: 0)
-        self.setAnimationLine(index: indexPath)
+        setAnimationLine(index: indexPath)
         
     }
 }
@@ -84,12 +81,12 @@ extension YXPickerTitleView: UICollectionViewDelegate, UICollectionViewDataSourc
         
         if titleArray!.count - 1 == indexPath.row{
             cell.titleLabel.textColor = UIColor.red
-            let cellRect = self.myCollectionView.convert(cell.frame, to: self.myCollectionView)
-            var sdass = self.myCollectionView.convert(cellRect, to: self)
-            sdass.size.height = 3.0
+            let cellRect = myCollectionView.convert(cell.frame, to: myCollectionView)
+            var lineFrame = myCollectionView.convert(cellRect, to: self)
+            lineFrame.size.height = 3.0
             
             UIView.animate(withDuration: 0.3) {
-                self.animationline.frame = sdass
+                self.animationline.frame = lineFrame
             }
         }else{
             cell.titleLabel.textColor = UIColor .black
@@ -100,14 +97,14 @@ extension YXPickerTitleView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 
     
-    func setAnimationLine(index: IndexPath){
+   fileprivate func setAnimationLine(index: IndexPath){
         
-        let cell = self.myCollectionView.cellForItem(at: index) as! YXPickerTitleCell
-        let cellRect = self.myCollectionView.convert(cell.frame, to: self.myCollectionView)
-        var sdass = self.myCollectionView.convert(cellRect, to: self)
-        sdass.size.height = 3.0
+        let cell = myCollectionView.cellForItem(at: index) as! YXPickerTitleCell
+        let cellRect = myCollectionView.convert(cell.frame, to: myCollectionView)
+        var lineFrame = myCollectionView.convert(cellRect, to: self)
+        lineFrame.size.height = 3.0
         UIView.animate(withDuration: 0.3) {
-            self.animationline.frame = sdass
+            self.animationline.frame = lineFrame
         }
     }
     
@@ -115,10 +112,10 @@ extension YXPickerTitleView: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if self.delegate != nil{
-            self.delegate?.yxpickerTitleDidselect(index: indexPath.row)
+        if delegate != nil{
+            delegate?.yxpickerTitleDidselect(index: indexPath.row)
         }
-        self.setAnimationLine(index: indexPath)
+        setAnimationLine(index: indexPath)
     
         
     }
