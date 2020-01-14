@@ -8,7 +8,7 @@
     
     下载Demo,将YXPickerView拖入工程中，根据自己的项目需求进行数据的匹配。
     支持本地数据和网络数据。
-    Model的解析使用的是MJ老师的[KakaJSON](https://github.com/kakaopensource/KakaJSON)
+    Model的解析使用的是MJ老师的KakaJSON
     
 
     ///初始化
@@ -20,3 +20,4 @@
 备注：数据传递根据自己需求去做就OK
 
 ```
+[KakaJSON链接地址](https://github.com/kakaopensource/KakaJSON)
