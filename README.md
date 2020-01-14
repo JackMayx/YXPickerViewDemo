@@ -1,5 +1,5 @@
 # YXPickerViewDemo
-城市选择（数据支持本地和网络）
+城市选择（数据支持本地和网络），有问题随时沟通
 
 ![image](https://github.com/XiAnRuFeng/YXPickerViewDemo/blob/master/IMG_0933.GIF)
 
@@ -9,7 +9,7 @@
     下载Demo,将YXPickerView拖入工程中，根据自己的项目需求进行数据的匹配。
     支持本地数据和网络数据。
     Model的解析使用的是MJ老师的[KakaJSON](https://github.com/kakaopensource/KakaJSON)
-
+    
 
     ///初始化
      let chooseView = YXChooseView(frame: CGRect(x: 0, y: self.view.yx.height, width: self.view.yx.width, height: 400))
