@@ -122,7 +122,7 @@ extension YXChooseView: UIScrollViewDelegate{
 }
 
 extension YXChooseView: YXPickerListViewDelegate{
-    func yxpickerListView(at pickListView: YXPickerListView, didselectModel: YXModel) {
+    func yxPickerListView(at pickListView: YXPickerListView, didselectModel: YXModel) {
         
 
         guard didselectModel.child != nil else {

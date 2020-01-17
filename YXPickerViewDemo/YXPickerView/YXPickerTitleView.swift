@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol YXPickerTitleViewDelegate {
+protocol YXPickerTitleViewDelegate: class {
     func yxpickerTitleDidselect(index: Int)
 }
 
@@ -22,7 +22,7 @@ class YXPickerTitleView: UIView {
         }
     }
     
-    private var myCollectionView: UICollectionView!
+    private weak var myCollectionView: UICollectionView!
     
     ///红色的动画线条
     private var animationline: UIView!

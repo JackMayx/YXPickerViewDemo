@@ -9,9 +9,9 @@
 import UIKit
 
 
-protocol YXPickerListViewDelegate {
+protocol YXPickerListViewDelegate: class {
     
-    func yxpickerListView(at pickListView: YXPickerListView, didselectModel: YXModel)
+    func yxPickerListView(at pickListView: YXPickerListView, didselectModel: YXModel)
     
 }
 
@@ -22,7 +22,7 @@ class YXPickerListView: UIView {
             myTableView.reloadData()
         }
     }
-    public var delegate: YXPickerListViewDelegate?
+    public weak var delegate: YXPickerListViewDelegate?
     
     private var selectIndexs: IndexPath?
     
@@ -100,7 +100,7 @@ extension YXPickerListView: UITableViewDelegate, UITableViewDataSource{
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             if self.delegate != nil{
-                self.delegate?.yxpickerListView(at: self, didselectModel: (self.cityDataArray?[indexPath.row])!)
+                self.delegate?.yxPickerListView(at: self, didselectModel: (self.cityDataArray?[indexPath.row])!)
             }
         }
     }
