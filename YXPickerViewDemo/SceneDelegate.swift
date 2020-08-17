@@ -3,7 +3,7 @@
 //  YXPickerViewDemo
 //
 //  Created by godox on 2020/1/13.
-//  Copyright © 2020 RuFeng. All rights reserved.
+//  Copyright © 2020 JackMayx. All rights reserved.
 //
 
 import UIKit

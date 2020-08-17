@@ -3,7 +3,7 @@
 //  RuFengVideoEditDemo
 //
 //  Created by godox on 2020/1/10.
-//  Copyright © 2020 YX. All rights reserved.
+//  Copyright © 2020 JackMayx. All rights reserved.
 //
 
 import UIKit
@@ -14,15 +14,29 @@ protocol YXPickerTitleViewDelegate: class {
 
 class YXPickerTitleView: UIView {
     
-    public var delegate: YXPickerTitleViewDelegate?
+    var delegate: YXPickerTitleViewDelegate?
     
-    public var titleArray:[String]? {
+    var titleArray:[String]? {
         didSet{
             myCollectionView.reloadData()
         }
     }
     
-    private weak var myCollectionView: UICollectionView!
+    private lazy var myCollectionView: UICollectionView = {
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        let collectionView  = UICollectionView(frame: CGRect(x: 10, y: 0, width: yx.width - 20, height: yx.height), collectionViewLayout: flowLayout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.alwaysBounceHorizontal = true
+        collectionView.isPagingEnabled = false
+        collectionView.register(YXPickerTitleCell.self, forCellWithReuseIdentifier: "cell")
+        return collectionView
+    }()
     
     ///红色的动画线条
     private var animationline: UIView!
@@ -38,17 +52,7 @@ class YXPickerTitleView: UIView {
     
     private func setSubviews(){
         
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal        
-        myCollectionView  = UICollectionView(frame: CGRect(x: 10, y: 0, width: yx.width - 20, height: yx.height), collectionViewLayout: flowLayout)
-        myCollectionView.delegate = self
-        myCollectionView.dataSource = self
-        myCollectionView.backgroundColor = UIColor .clear
-        myCollectionView.showsVerticalScrollIndicator = false
-        myCollectionView.showsHorizontalScrollIndicator = false
-        myCollectionView.alwaysBounceHorizontal = true
-        myCollectionView.isPagingEnabled = false
-        myCollectionView.register(YXPickerTitleCell.self, forCellWithReuseIdentifier: "cell")
+        
         addSubview(myCollectionView)
         
         let line = UIView(frame: CGRect(x: 0, y: frame.size.height - 1, width: frame.size.width, height: 1))
@@ -62,7 +66,7 @@ class YXPickerTitleView: UIView {
     }
     
   
-    public func scrollerTitle(index: Int){
+    func scrollerTitle(index: Int){
         let indexPath = IndexPath(row: index, section: 0)
         setAnimationLine(index: indexPath)
         
@@ -116,7 +120,6 @@ extension YXPickerTitleView: UICollectionViewDelegate, UICollectionViewDataSourc
             delegate?.yxpickerTitleDidselect(index: indexPath.row)
         }
         setAnimationLine(index: indexPath)
-    
         
     }
 
@@ -127,9 +130,6 @@ extension YXPickerTitleView: UICollectionViewDelegate, UICollectionViewDataSourc
         let width: CGFloat = titleString.boundingRect(with: CGSize(width: 0, height: self.frame.size.height), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)], context: nil).width
         return CGSize(width: width + 10.0, height: 30)
     }
-    
-    
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }

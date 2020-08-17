@@ -3,7 +3,7 @@
 //  RuFengVideoEditDemo
 //
 //  Created by godox on 2019/12/26.
-//  Copyright © 2019 YX. All rights reserved.
+//  Copyright © 2019 JackMayx. All rights reserved.
 //
 
 import Foundation

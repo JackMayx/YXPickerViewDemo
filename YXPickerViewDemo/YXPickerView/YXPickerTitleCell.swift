@@ -3,7 +3,7 @@
 //  RuFengVideoEditDemo
 //
 //  Created by godox on 2020/1/10.
-//  Copyright © 2020 YX. All rights reserved.
+//  Copyright © 2020 JackMayx. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 class YXPickerTitleCell: UICollectionViewCell {
     
     
-    public var titleLabel: UILabel!
+    var titleLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

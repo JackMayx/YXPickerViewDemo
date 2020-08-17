@@ -3,7 +3,7 @@
 //  RuFengVideoEditDemo
 //
 //  Created by godox on 2020/1/10.
-//  Copyright © 2020 YX. All rights reserved.
+//  Copyright © 2020 JackMayx. All rights reserved.
 //
 
 import UIKit

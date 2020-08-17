@@ -3,15 +3,15 @@
 //  RuFengVideoEditDemo
 //
 //  Created by godox on 2020/1/13.
-//  Copyright © 2020 YX. All rights reserved.
+//  Copyright © 2020 JackMayx. All rights reserved.
 //
 
 import UIKit
 
 class YXPickerListCell: UITableViewCell {
 
-    public var chooseImageView: UIImageView!
-    public var titleLabel: UILabel!
+    var chooseImageView: UIImageView!
+    var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -33,7 +33,7 @@ class YXPickerListCell: UITableViewCell {
     }
     
     
-    public var model: String? {
+    var model: String? {
         
         didSet{
             titleLabel.text = model
